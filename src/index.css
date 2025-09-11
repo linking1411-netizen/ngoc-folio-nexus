@@ -2,39 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Executive Portfolio Design System
+   Minimal black/white with sophisticated gold accents
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 0%;
+    
+    /* Executive Gold Accent */
+    --gold: 43 79% 52%;
+    --gold-muted: 43 30% 85%;
+    --gold-dark: 43 79% 42%;
 
+    /* Neutral Grays */
+    --gray-50: 0 0% 98%;
+    --gray-100: 0 0% 94%;
+    --gray-200: 0 0% 89%;
+    --gray-300: 0 0% 83%;
+    --gray-400: 0 0% 64%;
+    --gray-500: 0 0% 45%;
+    --gray-600: 0 0% 32%;
+    --gray-700: 0 0% 25%;
+    --gray-800: 0 0% 15%;
+    --gray-900: 0 0% 9%;
+
+    /* Semantic Tokens */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 79% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 43 79% 52%;
+
+    --radius: 0.5rem;
+
+    /* Executive Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--gray-50)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--gray-50)) 100%);
+
+    /* Elegant Shadows */
+    --shadow-soft: 0 2px 8px hsla(0, 0%, 0%, 0.04);
+    --shadow-medium: 0 4px 16px hsla(0, 0%, 0%, 0.08);
+    --shadow-large: 0 8px 32px hsla(0, 0%, 0%, 0.12);
+    --shadow-gold: 0 4px 20px hsla(43, 79%, 52%, 0.15);
+
+    /* Professional Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --radius: 0.5rem;
 
@@ -100,6 +137,44 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Executive Button Variants */
+  .btn-executive {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+  
+  .btn-executive-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-8 py-3 rounded-lg font-medium tracking-wide transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:shadow-lg;
+  }
+  
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold to-gold-dark text-accent-foreground px-8 py-3 rounded-lg font-medium tracking-wide transition-all duration-300 hover:shadow-gold hover:scale-105;
+  }
+
+  /* Elegant Timeline */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-border last:border-l-0;
+  }
+  
+  .timeline-dot {
+    @apply absolute -left-2 top-2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-md;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-24 px-6 md:px-12 lg:px-24;
+  }
+
+  /* Animated Underline */
+  .animated-underline {
+    @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 }
