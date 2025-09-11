@@ -69,64 +69,64 @@ export const Contact = ({ lang }: ContactProps) => {
   };
 
   return (
-    <section className="section-padding bg-background">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold mb-4">
               {t.title}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               {t.subtitle}
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Info */}
-            <div className="space-y-8">
-              <div className="bg-card rounded-2xl p-8 shadow-medium border border-border">
-                <h3 className="text-xl font-playfair font-semibold mb-6">
+            <div className="order-2 lg:order-1">
+              <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-medium border border-border">
+                <h3 className="text-lg sm:text-xl font-playfair font-semibold mb-6">
                   {lang === 'en' ? 'Contact Information' : 'Thông tin Liên hệ'}
                 </h3>
                 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-accent-foreground" />
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-accent-foreground" />
                     </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{t.contact.phone}</p>
-                      <p className="font-medium">0972-862-432</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{t.contact.email}</p>
-                      <p className="font-medium">tbn842003@gmail.com</p>
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.phone}</p>
+                      <p className="text-sm sm:text-base font-medium">0972-862-432</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-                      <Linkedin className="w-5 h-5 text-accent-foreground" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-accent-foreground" />
                     </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{t.contact.linkedin}</p>
-                      <p className="font-medium">linkedin.com/in/tranbaongoc</p>
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.email}</p>
+                      <p className="text-sm sm:text-base font-medium break-all">tbn842003@gmail.com</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent-foreground" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-accent-foreground" />
                     </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{t.contact.location}</p>
-                      <p className="font-medium">Hanoi, Vietnam</p>
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.linkedin}</p>
+                      <p className="text-sm sm:text-base font-medium break-all">linkedin.com/in/tranbaongoc</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent-foreground" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-muted-foreground">{t.contact.location}</p>
+                      <p className="text-sm sm:text-base font-medium">Hanoi, Vietnam</p>
                     </div>
                   </div>
                 </div>
@@ -134,9 +134,9 @@ export const Contact = ({ lang }: ContactProps) => {
             </div>
             
             {/* Contact Form */}
-            <div className="bg-card rounded-2xl p-8 shadow-medium border border-border">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+            <div className="order-1 lg:order-2 bg-card rounded-2xl p-6 sm:p-8 shadow-medium border border-border">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <Input
                       name="name"
@@ -144,7 +144,7 @@ export const Contact = ({ lang }: ContactProps) => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-background"
+                      className="bg-background text-sm sm:text-base"
                     />
                   </div>
                   <div>
@@ -155,7 +155,7 @@ export const Contact = ({ lang }: ContactProps) => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-background"
+                      className="bg-background text-sm sm:text-base"
                     />
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export const Contact = ({ lang }: ContactProps) => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="bg-background"
+                    className="bg-background text-sm sm:text-base"
                   />
                 </div>
                 
@@ -178,13 +178,13 @@ export const Contact = ({ lang }: ContactProps) => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={6}
-                    className="bg-background resize-none"
+                    rows={5}
+                    className="bg-background resize-none text-sm sm:text-base"
                   />
                 </div>
                 
                 <Button type="submit" className="btn-gold w-full group">
-                  <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                   {t.form.send}
                 </Button>
               </form>

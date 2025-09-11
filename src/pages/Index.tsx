@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 right-0 z-50 p-6">
+      <nav className="fixed top-0 right-0 z-50 p-3 sm:p-6">
         <LanguageToggle 
           currentLang={language} 
           onLanguageChange={setLanguage}

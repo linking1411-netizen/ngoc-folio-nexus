@@ -29,26 +29,26 @@ export const About = ({ lang }: AboutProps) => {
   const t = content[lang];
 
   return (
-    <section className="section-padding bg-gradient-subtle">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-subtle px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-center mb-12 sm:mb-16">
             {t.title}
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Main Content */}
-            <div>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            <div className="order-2 lg:order-1">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8">
                 {t.text}
               </p>
               
               {/* Key Highlights */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {t.highlights.map((highlight, index) => (
                   <div key={index} className="flex items-center group">
-                    <div className="w-2 h-2 bg-accent rounded-full mr-4 group-hover:scale-150 transition-transform"></div>
-                    <span className="text-gray-700 font-medium group-hover:text-accent transition-colors">
+                    <div className="w-2 h-2 bg-accent rounded-full mr-3 sm:mr-4 group-hover:scale-150 transition-transform flex-shrink-0"></div>
+                    <span className="text-sm sm:text-base text-gray-700 font-medium group-hover:text-accent transition-colors">
                       {highlight}
                     </span>
                   </div>
@@ -57,29 +57,29 @@ export const About = ({ lang }: AboutProps) => {
             </div>
             
             {/* Stats Card */}
-            <div className="bg-card rounded-2xl p-8 shadow-medium border border-border">
-              <div className="grid grid-cols-2 gap-6 text-center">
+            <div className="order-1 lg:order-2 bg-card rounded-2xl p-6 sm:p-8 shadow-medium border border-border">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-playfair font-bold text-accent mb-2">20+</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-playfair font-bold text-accent mb-1 sm:mb-2">20+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">
                     {lang === 'en' ? 'Partnerships' : 'Đối tác'}
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-playfair font-bold text-accent mb-2">30+</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-playfair font-bold text-accent mb-1 sm:mb-2">30+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">
                     {lang === 'en' ? 'International Meetings' : 'Cuộc họp Quốc tế'}
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-playfair font-bold text-accent mb-2">100+</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-playfair font-bold text-accent mb-1 sm:mb-2">100+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">
                     {lang === 'en' ? 'Youth Connected' : 'Thanh niên Kết nối'}
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-playfair font-bold text-accent mb-2">5</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-playfair font-bold text-accent mb-1 sm:mb-2">5</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">
                     {lang === 'en' ? 'Years Experience' : 'Năm Kinh nghiệm'}
                   </div>
                 </div>

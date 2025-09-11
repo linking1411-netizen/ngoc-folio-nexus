@@ -30,11 +30,11 @@ export const Hero = ({ lang }: HeroProps) => {
   const t = content[lang];
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-hero">
-      <div className="container mx-auto section-padding text-center">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-hero px-4 sm:px-6">
+      <div className="container mx-auto py-8 sm:py-16 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Professional Photo */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden shadow-gold border-2 border-accent">
+          <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 rounded-full overflow-hidden shadow-gold border-2 border-accent">
             <img 
               src="/lovable-uploads/34b0bef7-70d1-4775-9f06-52cf09a07515.png" 
               alt="Trần Bảo Ngọc - Executive Assistant"
@@ -43,36 +43,36 @@ export const Hero = ({ lang }: HeroProps) => {
           </div>
           
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-4 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-playfair font-bold mb-3 sm:mb-4 tracking-tight leading-tight">
             {t.name}
           </h1>
           
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-accent font-playfair italic mb-3">
+          <p className="text-lg sm:text-xl md:text-2xl text-accent font-playfair italic mb-2 sm:mb-3 px-2">
             {t.tagline}
           </p>
           
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 font-medium px-2">
             {t.subtitle}
           </p>
           
           {/* Introduction */}
-          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
             {t.intro}
           </p>
           
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="btn-gold group">
-              <FileText className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+            <Button className="btn-gold group w-full sm:w-auto">
+              <FileText className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
               {t.downloadCV}
             </Button>
-            <Button variant="outline" className="btn-executive-outline">
-              <Download className="w-5 h-5 mr-2" />
+            <Button variant="outline" className="btn-executive-outline w-full sm:w-auto">
+              <Download className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
               {t.downloadVCard}
             </Button>
-            <Button variant="ghost" className="animated-underline font-medium">
+            <Button variant="ghost" className="animated-underline font-medium w-full sm:w-auto">
               {t.contact}
             </Button>
           </div>

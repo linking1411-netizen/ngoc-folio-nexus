@@ -117,37 +117,41 @@ export const ExperienceTimeline = ({ lang }: ExperienceTimelineProps) => {
   const t = content[lang];
 
   return (
-    <section className="section-padding bg-background">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-center mb-12 sm:mb-16">
             {t.title}
           </h2>
           
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {t.experiences.map((exp, index) => (
-              <div key={index} className="timeline-item group hover:bg-gray-50/50 rounded-xl p-6 transition-all duration-300">
+              <div key={index} className="timeline-item group hover:bg-gray-50/50 rounded-xl p-4 sm:p-6 transition-all duration-300">
                 <div className="timeline-dot group-hover:scale-125 transition-transform"></div>
                 
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid lg:grid-cols-3 gap-4 sm:gap-6">
                   {/* Left Column - Role & Company */}
-                  <div className="md:col-span-2">
-                    <h3 className="text-xl font-playfair font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                  <div className="lg:col-span-2">
+                    <h3 className="text-lg sm:text-xl font-playfair font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
                       {exp.role}
                     </h3>
                     
-                    <div className="flex items-center gap-2 text-muted-foreground mb-3">
-                      <Building className="w-4 h-4" />
-                      <span className="font-medium">{exp.company}</span>
-                      <MapPin className="w-4 h-4 ml-2" />
-                      <span>{exp.location}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground mb-3">
+                      <div className="flex items-center gap-2">
+                        <Building className="w-4 h-4 flex-shrink-0" />
+                        <span className="font-medium text-sm sm:text-base">{exp.company}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 flex-shrink-0" />
+                        <span className="text-sm sm:text-base">{exp.location}</span>
+                      </div>
                     </div>
                     
                     <ul className="space-y-2">
                       {exp.highlights.map((highlight, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-600">
                           <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="leading-relaxed">{highlight}</span>
+                          <span className="leading-relaxed text-sm sm:text-base">{highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -156,7 +160,7 @@ export const ExperienceTimeline = ({ lang }: ExperienceTimelineProps) => {
                   {/* Right Column - Period */}
                   <div className="flex items-start gap-2 text-muted-foreground">
                     <Calendar className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <span className="font-medium">{exp.period}</span>
+                    <span className="font-medium text-sm sm:text-base">{exp.period}</span>
                   </div>
                 </div>
               </div>
