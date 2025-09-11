@@ -33,9 +33,13 @@ export const Hero = ({ lang }: HeroProps) => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-hero">
       <div className="container mx-auto section-padding text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Professional Photo Placeholder */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
-            <User className="w-16 h-16 text-accent-foreground" />
+          {/* Professional Photo */}
+          <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden shadow-gold border-2 border-accent">
+            <img 
+              src="/lovable-uploads/34b0bef7-70d1-4775-9f06-52cf09a07515.png" 
+              alt="Trần Bảo Ngọc - Executive Assistant"
+              className="w-full h-full object-cover"
+            />
           </div>
           
           {/* Name */}
