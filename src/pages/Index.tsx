@@ -1,32 +1,34 @@
 import { useState } from "react";
+import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Education } from "@/components/Education";
 import { Contact } from "@/components/Contact";
-import { LanguageToggle } from "@/components/LanguageToggle";
 
 const Index = () => {
   const [language, setLanguage] = useState<'en' | 'vn'>('en');
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Fixed Navigation */}
-      <nav className="fixed top-0 right-0 z-50 p-3 sm:p-6">
-        <LanguageToggle 
-          currentLang={language} 
-          onLanguageChange={setLanguage}
-        />
-      </nav>
+      <Header lang={language} onLanguageChange={setLanguage} />
 
-      {/* Page Sections */}
-      <Hero lang={language} />
-      <About lang={language} />
-      <ExperienceTimeline lang={language} />
-      <Education lang={language} />
-      <Contact lang={language} />
+      <div id="hero">
+        <Hero lang={language} />
+      </div>
+      <div id="about">
+        <About lang={language} />
+      </div>
+      <div id="experience">
+        <ExperienceTimeline lang={language} />
+      </div>
+      <div id="education">
+        <Education lang={language} />
+      </div>
+      <div id="contact">
+        <Contact lang={language} />
+      </div>
       
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">

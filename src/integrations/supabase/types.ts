@@ -14,16 +14,246 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          content_en: string | null
+          content_vn: string | null
+          cover_image: string | null
+          created_at: string
+          excerpt_en: string | null
+          excerpt_vn: string | null
+          id: string
+          published: boolean | null
+          published_at: string | null
+          slug: string
+          title_en: string
+          title_vn: string
+          updated_at: string
+        }
+        Insert: {
+          content_en?: string | null
+          content_vn?: string | null
+          cover_image?: string | null
+          created_at?: string
+          excerpt_en?: string | null
+          excerpt_vn?: string | null
+          id?: string
+          published?: boolean | null
+          published_at?: string | null
+          slug: string
+          title_en: string
+          title_vn: string
+          updated_at?: string
+        }
+        Update: {
+          content_en?: string | null
+          content_vn?: string | null
+          cover_image?: string | null
+          created_at?: string
+          excerpt_en?: string | null
+          excerpt_vn?: string | null
+          id?: string
+          published?: boolean | null
+          published_at?: string | null
+          slug?: string
+          title_en?: string
+          title_vn?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      education: {
+        Row: {
+          created_at: string
+          degree_en: string
+          degree_vn: string
+          description_en: string | null
+          description_vn: string | null
+          id: string
+          period: string
+          school: string
+          sort_order: number | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          degree_en: string
+          degree_vn: string
+          description_en?: string | null
+          description_vn?: string | null
+          id?: string
+          period: string
+          school: string
+          sort_order?: number | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          degree_en?: string
+          degree_vn?: string
+          description_en?: string | null
+          description_vn?: string | null
+          id?: string
+          period?: string
+          school?: string
+          sort_order?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      experiences: {
+        Row: {
+          company: string
+          created_at: string
+          description_en: string[] | null
+          description_vn: string[] | null
+          id: string
+          period: string
+          role_en: string
+          role_vn: string
+          sort_order: number | null
+          updated_at: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          description_en?: string[] | null
+          description_vn?: string[] | null
+          id?: string
+          period: string
+          role_en: string
+          role_vn: string
+          sort_order?: number | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          description_en?: string[] | null
+          description_vn?: string[] | null
+          id?: string
+          period?: string
+          role_en?: string
+          role_vn?: string
+          sort_order?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          created_at: string
+          currency: string | null
+          description_en: string | null
+          description_vn: string | null
+          file_url: string | null
+          id: string
+          image: string | null
+          name_en: string
+          name_vn: string
+          price: number
+          product_type: string | null
+          published: boolean | null
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          currency?: string | null
+          description_en?: string | null
+          description_vn?: string | null
+          file_url?: string | null
+          id?: string
+          image?: string | null
+          name_en: string
+          name_vn: string
+          price?: number
+          product_type?: string | null
+          published?: boolean | null
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          currency?: string | null
+          description_en?: string | null
+          description_vn?: string | null
+          file_url?: string | null
+          id?: string
+          image?: string | null
+          name_en?: string
+          name_vn?: string
+          price?: number
+          product_type?: string | null
+          published?: boolean | null
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      site_content: {
+        Row: {
+          created_at: string
+          id: string
+          key: string
+          updated_at: string
+          value_en: string | null
+          value_vn: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          key: string
+          updated_at?: string
+          value_en?: string | null
+          value_vn?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          key?: string
+          updated_at?: string
+          value_en?: string | null
+          value_vn?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +380,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
